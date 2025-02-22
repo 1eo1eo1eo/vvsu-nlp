@@ -1,0 +1,57 @@
+[project]
+name = "vvsu-nlp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "natasha>=1.6.0",
+    "nltk>=3.9.1",
+    "notebook>=7.3.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.5",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+lint.select = [
+    "I",      # isort
+    "Q",
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "UP",     # pyupgrade
+    "C",      # flake8-comprehensions
+    "B",      # flake8-bugbear
+    "S",      # flake8-bandit
+    "ISC",    # flake8-implicit-str-concat
+    "ASYNC",  # flake8-async
+    "T20",    # print and pprint
+    "ANN",    # flake8-annotations
+    "TCH",    # flake8-type-checking
+    "PT",     # flake8-pytest-style
+    "RUF",    # ruff-specific rules
+    "PT",     # Pytest style
+    "C90",    # mccabe
+    "FAST",   # FastAPI
+    "SIM",    # flake8-simplify
+]
+lint.ignore = [
+    "E501",   # line too long, handled by black
+    "B008",   # do not perform function calls in argument defaults
+    "F821",   # checks for uses of undefined names, breaks sqlalchemy models
+    "UP007",  # large models are unreadable
+    "UP032",  # allows str .format
+    "ANN401", # allows type Any
+    "RUF012", # typing.ClassVar
+    "RUF002", # docstring contains ambiguous
+    "RUF001",
+    "RUF003",
+    "RUF100", # Unused `noqa` directive
+    "W291",   # Trailing whitespace
+    "TC003",  # Type-checking block
+]
